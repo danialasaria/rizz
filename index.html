@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:)</title>
+</head>
+<body>
+    <div id="mainContainer">
+        <p id="quote">rizz</p>
+    </div>
+    <div id="buttonContainer">
+        <button id="reactButton" class="glow-on-hover" onclick="fetchNewLine()">fresh line</button>
+    </div>
+
+
+    <script>
+        async function fetchNewLine() {
+            let data;
+            fetch('https://getpickuplines.herokuapp.com/lines/random').then((response)=> {
+                return response.json()
+            }).then((result) => {
+                console.log(result)
+            })
+            if (data.ok) {
+               document.getElementById("quote").innerHTML = "&#8220" + data.content + "&#8221 -" + data.author;
+            } else {
+              quote.textContent = "An error occured";
+              console.log(data);
+            }
+          }
+    </script>
+</body>
+</html>
