@@ -23,7 +23,7 @@
     height: calc(90vh - 130px);
 }
 
-#quote {
+#rizz {
     position: relative;
     text-align: center;
     font-size: 35px;
@@ -37,7 +37,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-    #quote {
+    #rizz {
         position: relative;
         text-align: center;
         font-size: 45px;

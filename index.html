@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="mainContainer">
-        <p id="quote">rizz</p>
+        <p id="rizz">rizz</p>
     </div>
     <div id="buttonContainer">
         <button id="reactButton" class="glow-on-hover" onclick="fetchNewLine()">fresh line</button>
@@ -16,19 +16,44 @@
 
 
     <script>
-        async function fetchNewLine() {
-            let data;
-            fetch('https://getpickuplines.herokuapp.com/lines/random').then((response)=> {
-                return response.json()
-            }).then((result) => {
-                console.log(result)
-            })
-            if (data.ok) {
-               document.getElementById("quote").innerHTML = "&#8220" + data.content + "&#8221 -" + data.author;
-            } else {
-              quote.textContent = "An error occured";
-              console.log(data);
-            }
+        quotes = [
+            "Well, here I am. What are your other two wishes?",
+            "My name's Microsft. Can I crash at your place tonight?",
+            "If I could rearrange the alphabet, I’d put ‘U’ and ‘I’ together.",
+            "Do you have 11 protons because you're sodium fine",
+            "Do you watch star wars? Cause baby yoda one",
+            "You girl,be my derivative so that I can lie tangent to your curves",
+            "There is something wrong with my cell phone. It doesn't have your number in it.",
+            "Do you know CPR? Because you are taking my breath away!",
+            "I never believed in love at first sight, but that was before I saw you.",
+            "What time do you have to be back in heaven?",
+            "Are you French? Because Eiffel for you.",
+            "Do you like raisins? How do you feel about a date?",
+            "There is something wrong with my cell phone. It doesn't have your number in it.",
+            "Aside from being sexy, what do you do for a living?",
+            "I must be a snowflake, because I've fallen for you.",
+            "Are you from Tennessee? Because you're the only 10 I see!",
+            "I wish I were cross-eyed so I can see you twice.",
+            "I must be in a museum, because you truly are a work of art.",
+            "Life without you is like a broken pencil…pointless.",
+            "My love for you is like diarrhea, I just can't hold it in.",
+            "Do you have a map? I keep getting lost in your eyes.",
+            "Did you invent the airplane? Because you seem Wright for me.",
+            "Did the sun come out or did you just smile at me?",
+            "Do you know CPR? Because you are taking my breath away!",
+            "You’re so beautiful that you made me forget my pickup line.​",
+            "Is your name Google? Because you got everything I am searching for.​",
+            "Is there an airport nearby or is it my heart taking off?",
+            "If you were a vegetable you’d be a cute cumber.​",
+            "You don’t need keys to drive me crazy.",
+            "If you were a booger I’d pick you first ",
+        ];
+        function fetchNewLine() {
+            const pickupLine = get_random_array_element(quotes);
+            document.getElementById("rizz").innerHTML = pickupLine;
+          }
+        function get_random_array_element(array) {
+            return array[Math.floor(Math.random() * array.length)];
           }
     </script>
 </body>
